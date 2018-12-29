@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2018-06-15T17:47:39 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AllowanceRepo" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5ba1bac6-5679-4e04-b630-59f530762d42">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="payroll"/>
+        <parameter name="EmpId" isForPrompting="true" class="java.lang.String"></parameter>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="ee196006-fbbc-464e-8fac-80f8b98319a7">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="payroll"/>
+		<queryString>
+			<![CDATA[ select e.EmpName,BasicSalary,a.date,a.HRA,a.VA,a.Medical,a.Total from employee e, allowance a where e.id= a. EmployeeId and EmployeeId=$P{EmpId} group by EmployeeId;]]>
+		</queryString>
+		<field name="EmpName" class="java.lang.String"/>
+		<field name="BasicSalary" class="java.math.BigDecimal"/>
+		<field name="date" class="java.lang.String"/>
+		<field name="HRA" class="java.math.BigDecimal"/>
+		<field name="VA" class="java.math.BigDecimal"/>
+		<field name="Medical" class="java.math.BigDecimal"/>
+		<field name="Total" class="java.math.BigDecimal"/>
+		<group name="EmpName">
+			<groupExpression><![CDATA[$F{EmpName}]]></groupExpression>
+		</group>
+		<group name="BasicSalary">
+			<groupExpression><![CDATA[$F{BasicSalary}]]></groupExpression>
+		</group>
+		<group name="date">
+			<groupExpression><![CDATA[$F{date}]]></groupExpression>
+		</group>
+		<group name="HRA">
+			<groupExpression><![CDATA[$F{HRA}]]></groupExpression>
+		</group>
+		<group name="VA">
+			<groupExpression><![CDATA[$F{VA}]]></groupExpression>
+		</group>
+		<group name="Medical">
+			<groupExpression><![CDATA[$F{Medical}]]></groupExpression>
+		</group>
+		<group name="Total">
+			<groupExpression><![CDATA[$F{Total}]]></groupExpression>
+		</group>
+	</subDataset>
+	<queryString>
+		<![CDATA[select e.EmpName,BasicSalary,a.date,a.HRA,a.VA,a.Medical,a.Total from employee e, allowance a where e.id= a. EmployeeId group by EmployeeId;]]>
+	</queryString>
+	<field name="EmpName" class="java.lang.String"/>
+	<field name="BasicSalary" class="java.math.BigDecimal"/>
+	<field name="date" class="java.lang.String"/>
+	<field name="HRA" class="java.math.BigDecimal"/>
+	<field name="VA" class="java.math.BigDecimal"/>
+	<field name="Medical" class="java.math.BigDecimal"/>
+	<field name="Total" class="java.math.BigDecimal"/>
+	<group name="EmpName">
+		<groupExpression><![CDATA[$F{EmpName}]]></groupExpression>
+	</group>
+	<group name="BasicSalary">
+		<groupExpression><![CDATA[$F{BasicSalary}]]></groupExpression>
+	</group>
+	<group name="date">
+		<groupExpression><![CDATA[$F{date}]]></groupExpression>
+	</group>
+	<group name="HRA">
+		<groupExpression><![CDATA[$F{HRA}]]></groupExpression>
+	</group>
+	<group name="VA">
+		<groupExpression><![CDATA[$F{VA}]]></groupExpression>
+	</group>
+	<group name="Medical">
+		<groupExpression><![CDATA[$F{Medical}]]></groupExpression>
+	</group>
+	<group name="Total">
+		<groupExpression><![CDATA[$F{Total}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="258" splitType="Stretch">
+			<componentElement>
+				<reportElement x="0" y="58" width="560" height="100" uuid="0d408515-061d-47e8-89ce-08e6a88a662e">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset1" uuid="25b384db-c5df-4a63-80cc-ee05cea195b2">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="60" uuid="030ac25d-3cbc-4ab5-b14c-7d781f15c044">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="30" uuid="c1f7e45b-d8ed-4e83-957f-98f1107cc582"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[EmpName]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="60" height="30" uuid="2ed77652-b7ef-49b7-b52e-3d907b79d12b"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Yu Gothic UI Semilight"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{EmpName}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="7c605f00-8ff9-4947-8141-85ba135d3aa4">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="80" height="30" uuid="7289c487-7c34-4e73-b38b-46e6e0700aae"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[BasicSalary]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="80" height="30" uuid="b1b29743-d684-45cd-8a34-4ce6099a5fa9"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Yu Gothic UI Semilight"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{BasicSalary}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="e26ad6be-ac8b-4ba5-be9d-c467c2236684">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="80" height="30" uuid="d4ea3e1d-c803-4399-94cf-faef27ea071c"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[date]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="80" height="30" uuid="7566ddd4-368c-40d0-a7df-1383175ad0eb"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Yu Gothic UI Semilight"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="76ffb614-33f2-4eaa-9198-e08608fe3d46">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="80" height="30" uuid="708ac2f4-2c87-4f06-a0bb-a6c8fe6a85d8"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[HRA]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="80" height="30" uuid="a1862d86-7ecd-4f43-b58b-68ac18bf7f9e"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Yu Gothic UI Semilight"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{HRA}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="d8930494-0992-40a4-82c0-d16c61da67de">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="80" height="30" uuid="bb00b43e-fc58-4bac-97cb-5acec7bde7d8"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[VA]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="80" height="30" uuid="1fd72193-8c45-4614-be3f-d5267faf28b2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Yu Gothic UI Semilight"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{VA}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="51aca5de-aa5d-42c2-9a3e-1d8a9182e990">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="ee79f7a2-aa37-4bff-a5bd-e66887fcae06"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Medical]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="30" uuid="f68b725d-b9d2-4e18-94ba-6ecf92f865b5"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Yu Gothic UI Semilight"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{Medical}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="40182861-560c-427c-9dd4-cf8ac305c4cd">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column7"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="5f224894-12d9-496b-94fb-a7b39e5ccc34"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Total]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="30" uuid="2c7ac5f0-865d-4a32-b8bb-64ea32c38b44"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Yu Gothic UI Semilight"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{Total}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
